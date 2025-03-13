@@ -1,6 +1,7 @@
 #ifndef VEC_H
 #define VEC_H
 #include <cmath.h>
+#include <stdlib.h>
 
 /**
  * @brief A structure representing a mathematical vector of floating-point numbers
@@ -27,22 +28,21 @@ typedef struct
 } dvector_t;
 
 
-const vector_t VEC_UNDEFINED = {0, NULL};
-const dvector_t DVEC_UNDEFINED = {0, NULL};
+extern const vector_t VEC_UNDEFINED;
+extern const dvector_t DVEC_UNDEFINED;
 
 vector_t allocate(unsigned int size); // Allocate memory for a vector
 void free_vector(vector_t *v); // Free memory allocated for a vector
 vector_t vec_create(unsigned int size); // Create a new vector
 vector_t vec_create_from_array(unsigned int size, float *data); // Create a new vector from an array
 vector_t vec_copy(vector_t v); // Create a copy of a vector
-vector_t make_default_vector(); // Create a default vector
 
 dvector_t allocate_d(unsigned int size); // Allocate memory for a double precision vector
 void free_dvector(dvector_t *v); // Free memory allocated for a double precision vector
 dvector_t dvec_create(unsigned int size); // Create a new double precision vector
 dvector_t dvec_create_from_array(unsigned int size, double *data); // Create a new double precision vector from an array || macro exists
 dvector_t dvec_copy(dvector_t v); // Create a copy of a double precision vector
-dvector_t make_default_dvector(); // Create a default double precision vector
+
 
 
 #ifndef vector

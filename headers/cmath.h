@@ -3,6 +3,10 @@
 
 typedef unsigned char bool;
 
+#ifndef NULL
+    #define NULL ((void *)0)
+#endif
+
 #ifndef true
     #define true 1
 #endif
