@@ -1,2 +1,2 @@
-gcc src\main.c -o main.exe -g
-gdb main.exe
+gcc src\main.c -I headers -o src\main.exe -g
+gdb src\main.exe

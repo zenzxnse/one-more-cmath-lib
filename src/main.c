@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <../headers/cmath.h>
+#include <cmath.h>
 
 int main() {
     bool b = true;
