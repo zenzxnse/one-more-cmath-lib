@@ -1,7 +1,12 @@
 #ifndef  C_MATH
 #define  C_MATH
 
-typedef unsigned char bool;
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+// #include <math.h>
 
 #ifndef NULL
     #define NULL ((void *)0)
@@ -15,24 +20,25 @@ typedef unsigned char bool;
     #define false 0
 #endif
 
+#ifndef INFINITY
+    #define INFINITY (1.0/0.0)
+#endif //INFINITY
+
+#ifndef NAN
+    #define NAN (0.0/0.0)
+#endif //NAN
+
+#ifndef FLT_MAX
+    #define FLT_MAX 3.402823466e+38
+#endif //FLT_MAX
+
 #ifndef NUMARGS
-    #define NUMARGS(...) (sizeof((int[]){__VA_ARGS__})/sizeof(int))
+    #define NUMARGS(...) (sizeof((float[]){__VA_ARGS__})/sizeof(int))
 #endif
 
-#ifndef MAX
-    #define MAX(a, b) ((a) > (b) ? (a) : (b))
-#endif
-
-#ifndef MIN
-    #define MIN(a, b) ((a) < (b) ? (a) : (b))
-#endif
-
-#ifndef ABS
-    #define ABS(a) ((a) < 0 ? -(a) : (a))
-#endif
-
-#ifndef CLAMP
-    #define CLAMP(a, b, c) (MAX(b, MIN(a, c)))
-#endif
+typedef unsigned char uint8_t;
+typedef unsigned short uint16_t;
+typedef unsigned int uint32_t;
+typedef unsigned long long uint64_t;
 
 #endif // C_MATH
